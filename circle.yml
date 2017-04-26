@@ -14,7 +14,7 @@ dependencies:
     - pip install pip-tools
     - pip-sync testinfra/requirements.txt
 
-test:
+compile:
   override:
     - make ci-go
   post:
