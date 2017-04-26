@@ -54,8 +54,12 @@
               from_port: 22
               to_port: 22
               cidr_ip: "{{ ci_box_ip  }}/32"
+            - proto: tcp
+              from_port: 1514
+              to_port: 1515
+              cidr_ip: "{{ vpc_subnet_result.subnets[0].cidr_block }}"
             - proto: udp
-              from_port: 1515
+              from_port: 1514
               to_port: 1515
               cidr_ip: "{{ vpc_subnet_result.subnets[0].cidr_block }}"
         register: group_create_result
