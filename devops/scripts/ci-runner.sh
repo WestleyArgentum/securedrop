@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . devops/ansible_env
+trap "make ci-teardown" ERR
 
 if [ ! -d "install_files/ossec-packages/ansible/" ]; then
     git submodule update --init --recursive
